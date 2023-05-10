@@ -2,6 +2,8 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
 
+    // Conteneurs
+
     container: {
         flex: 1,
         backgroundColor: '#fff',
@@ -13,6 +15,9 @@ export const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
     },
+
+    // Titre et sous-titre des pages
+
     containerTitle: {
         color: 'black',
         fontSize: 25,
@@ -21,18 +26,21 @@ export const styles = StyleSheet.create({
     containerSubtitle: {
         color: 'black',
         fontSize: 16,
+        marginTop: 15,
         marginBottom: 50,
         textAlign: 'center',
     },
+
+    // Logo
+
     logo: {
-        width: 247,
-        height: 55,
-        marginTop: 10,
-        marginBottom: 25,
         alignSelf: 'center',
         alignItems: 'center',
         justifyContent: 'center',
     },
+
+    // Bouton
+
     plainButton: {
         marginTop: 25,
         paddingVertical: 14,
@@ -47,16 +55,40 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         color: 'white',
     },
+
+    // Loader
+
     loadingContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
+
+    // Hero
+
     hero: {
         width: '100vw',
         height: 100,
         marginTop: 25,
     },
+
+    // Header
+
+    header: {
+        position: 'sticky',
+        top: 0,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: 20,
+        padding: 20,
+        width: '100vw',
+        height: 50,
+        marginBottom: 30,
+    },
+
+    // Menu
+
     menuButtonText: {
         fontSize: 18,
         fontWeight: 'bold',
@@ -73,18 +105,6 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         margin: 10,
-    },
-    header: {
-        position: 'sticky',
-        top: 0,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        paddingHorizontal: 20,
-        padding: 20,
-        width: '100vw',
-        height: 50,
-        marginBottom: 15,
     },
     menuButton: {
         fontSize: 12,

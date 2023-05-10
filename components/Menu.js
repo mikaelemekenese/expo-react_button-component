@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { styles } from '../styles/styles.js';
-import { useNavigation } from '@react-navigation/native';
+import { styles } from '../styles/styles';
 
 const Menu = ({ toggleMenu, navigation }) => {
 

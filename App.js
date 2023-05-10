@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Text, View, ActivityIndicator } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { styles } from './styles/styles.js';
+import { styles } from './styles/styles';
 import HomeScreen from './screens/HomeScreen';
 import AboutScreen from './screens/AboutScreen';
 import ContactScreen from './screens/ContactScreen';
@@ -32,7 +32,7 @@ export default function App() {
             options={{ headerShown: false }}
             component={() => (
               <View style={styles.container}>
-                <Logo />
+                <Logo width={247} height={55} />
                 <Text style={styles.containerSubtitle}>
                   Réservez vos repas sur votre nouvelle app'
                 </Text>
