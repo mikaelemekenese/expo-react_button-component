@@ -1,5 +1,6 @@
-import React from 'react'
-import { View, Image, TouchableOpacity, StyleSheet } from 'react-native'
+import React from 'react';
+import { View, Image, TouchableOpacity } from 'react-native';
+import { styles } from '../styles/styles.js';
 
 export default function Logo() {
     
@@ -11,15 +12,3 @@ export default function Logo() {
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    logo: {
-        width: 247,
-        height: 55,
-        marginTop: 10,
-        marginBottom: 25,
-        alignSelf: 'center',
-        alignItems: 'center',
-        justifyContent: 'center',
-    }
-})

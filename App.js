@@ -1,47 +1,54 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import Button from './components/Button';
+import { Text, View, ActivityIndicator } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { styles } from './styles/styles.js';
+import HomeScreen from './screens/HomeScreen';
+import AboutScreen from './screens/AboutScreen';
+import ContactScreen from './screens/ContactScreen';
 import Logo from './components/Logo';
 
+const Stack = createStackNavigator();
+
 export default function App() {
+
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.containerTitle}>Bienvenue sur</Text>
-      <Logo />
-      <Text style={styles.containerSubtitle}>Réservez vos repas sur votre nouvelle app' !</Text>
-      <StatusBar style="auto" />
-      <Button
-        cp="#e67104"
-        cs="#ebc51d"
-        title="Entrer"
-        outlined={true}
-        url="https://www.google.fr"
-      />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Welcome">
+        {isLoading ? (
+          <Stack.Screen
+            name="Welcome"
+            options={{ headerShown: false }}
+            component={() => (
+              <View style={styles.container}>
+                <Logo />
+                <Text style={styles.containerSubtitle}>
+                  Réservez vos repas sur votre nouvelle app'
+                </Text>
+                <ActivityIndicator size="large" color="#e67104" />
+                <StatusBar style="auto" />
+              </View>
+            )}
+          />
+        ) : (
+        <>
+          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="About" component={AboutScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Contact" component={ContactScreen} options={{ headerShown: false }} />
+        </>
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  containerTitle: {
-    color: 'black',
-    fontSize: 25,
-    textAlign: 'center',
-  },
-  containerSubtitle: {
-    color: 'black',
-    fontSize: 16,
-    marginBottom: 15,
-    textAlign: 'center',
-  },
-  logo: {
-    width: 250,
-    height: 'auto',
-  }
-});

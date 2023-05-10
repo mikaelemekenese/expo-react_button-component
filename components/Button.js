@@ -1,32 +1,22 @@
-import React from 'react'
-import { Text, TouchableOpacity, StyleSheet, View, Linking } from 'react-native'
+import React from 'react';
+import { Text, TouchableOpacity } from 'react-native';
+import { styles } from '../styles/styles.js';
 
-export default function Button({ cp, cs, url, outlined, title }) {
+type ButtonProps = {
+    cp: string;
+    cs: string;
+    onPress: () => void;
+    outlined: boolean;
+    title: string;
+};
+
+export default function Button({ cp, cs, onPress, outlined, title }: ButtonProps) {
 
     const buttonStyle = outlined ? {...styles.plainButton, ...styles.outlinedButton} : styles.plainButton;
 
     return (
-        <View>
-            <TouchableOpacity style={[buttonStyle, {backgroundColor: cp, borderColor: cs}]} onPress={() => Linking.openURL(url)}>
-                <Text style={styles.textStyle}>{title}</Text>
-            </TouchableOpacity>
-        </View>
+        <TouchableOpacity style={[buttonStyle, {backgroundColor: cp, borderColor: cs}]} onPress={onPress}>
+            <Text style={styles.textStyle}>{title}</Text>
+        </TouchableOpacity>
     )
 }
-
-const styles = StyleSheet.create({
-    plainButton: {
-        marginTop: 25,
-        paddingVertical: 14,
-        paddingHorizontal: 28,
-        borderRadius: 16,
-    },
-    outlinedButton: {
-        borderWidth: 3,
-        borderColor: '#39d353',
-    },
-    textStyle: {
-        fontSize: 16,
-        color: 'white',
-    },
-})
