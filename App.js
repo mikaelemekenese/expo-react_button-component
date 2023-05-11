@@ -2,14 +2,9 @@ import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, ActivityIndicator } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { styles } from './styles/styles';
-import HomeScreen from './screens/HomeScreen';
-import AboutScreen from './screens/AboutScreen';
-import ContactScreen from './screens/ContactScreen';
 import Logo from './components/Logo';
-
-const Stack = createStackNavigator();
+import MyTabs from './navigation/navigation';
 
 export default function App() {
 
@@ -29,24 +24,24 @@ export default function App() {
         {isLoading ? (
           <Stack.Screen
             name="Welcome"
-            options={{ headerShown: false }}
-            component={() => (
+            options={{ headerShown: false }}>
+            {() => (
               <View style={styles.container}>
                 <Logo width={247} height={55} />
                 <Text style={styles.containerSubtitle}>
-                  Réservez vos repas sur votre nouvelle app'
+                  Réservez vos repas sur votre nouvelle app' !
                 </Text>
                 <ActivityIndicator size="large" color="#e67104" />
                 <StatusBar style="auto" />
               </View>
             )}
-          />
+          </Stack.Screen>
         ) : (
-        <>
-          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="About" component={AboutScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Contact" component={ContactScreen} options={{ headerShown: false }} />
-        </>
+          <Stack.Screen name="MyTabs" options={{ headerShown: false }}>
+            {() => (
+              <MyTabs />
+            )}
+          </Stack.Screen>
         )}
       </Stack.Navigator>
     </NavigationContainer>

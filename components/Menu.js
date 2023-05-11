@@ -12,14 +12,14 @@ const Menu = ({ toggleMenu, navigation }) => {
 
   return (
     <View style={styles.menuContainer}>
-      <TouchableOpacity onPress={() => navigateTo('Home')} style={styles.menuButton}>
-        <Text style={styles.menuButtonText}>Accueil</Text>
+      <TouchableOpacity onPress={() => navigateTo('Home')} style={styles.menuItem}>
+        <Text style={styles.menuItemText}>Accueil</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigateTo('About')} style={styles.menuButton}>
-        <Text style={styles.menuButtonText}>A propos</Text>
+      <TouchableOpacity onPress={() => navigateTo('About')} style={styles.menuItem}>
+        <Text style={styles.menuItemText}>A propos</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigateTo('Contact')} style={styles.menuButton}>
-        <Text style={styles.menuButtonText}>Contact</Text>
+      <TouchableOpacity onPress={() => navigateTo('Contact')} style={styles.menuItem}>
+        <Text style={styles.menuItemText}>Contact</Text>
       </TouchableOpacity>
     </View>
   );

@@ -7,12 +7,15 @@ export default function ContactScreen({ navigation }) {
 
     return (
         <View style={styles.containerBis}>
+
             <Header navigation={navigation} />
-            <Text style={styles.containerTitle}>Contact</Text>
+
+            <Text style={styles.containerTitle}>Contactez-nous</Text>
     
             <TouchableOpacity>
                 <Image style={styles.hero} source={require('../assets/images/hero-image.jpg')} />
             </TouchableOpacity>
+
         </View>
     );
 }      

@@ -15,7 +15,7 @@ export default function HomeScreen({ navigation }) {
             <TouchableOpacity>
                 <Image style={styles.hero} source={require('../assets/images/hero-image.jpg')} />
             </TouchableOpacity>
+    
         </View>
     );
-}      
-
+}

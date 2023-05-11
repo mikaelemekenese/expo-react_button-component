@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
+        paddingTop: 100,
     },
 
     // Titre et sous-titre des pages
@@ -64,54 +65,35 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
-    // Hero
-
-    hero: {
-        width: '100vw',
-        height: 100,
-        marginTop: 25,
-    },
-
     // Header
 
     header: {
-        position: 'sticky',
+        position: 'absolute',
         top: 0,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: 20,
         padding: 20,
-        width: '100vw',
-        height: 50,
-        marginBottom: 30,
+        width: '100%',
+        height: 75,
+    },
+
+    // Hero
+
+    hero: {
+        width: '100%',
+        height: 100,
+        marginTop: 25,
     },
 
     // Menu
 
-    menuButtonText: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: '#ffffff',
-    },
     menuContainer: {
         flex: 1,
         backgroundColor: '#ffffff',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    menuButton: {
-        backgroundColor: '#e67104',
-        borderRadius: 10,
-        padding: 10,
-        margin: 10,
-    },
-    menuButton: {
-        fontSize: 12,
-    },
-    menuButtonText: {
-        fontSize: 16,
-        fontWeight: 'bold',
     },
     modalOverlay: {
         position: 'absolute',
@@ -121,6 +103,14 @@ export const styles = StyleSheet.create({
         bottom: 0,
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
         zIndex: 1,
+    },
+    menuItem: {
+        marginVertical: 10
+    },
+    menuItemText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#e67104',
     },
     menuPopup: {
         position: 'absolute',
@@ -139,9 +129,5 @@ export const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         padding: 10,
         zIndex: 2,
-    },
-    menuCloseButtonText: {
-        color: 'black',
-        fontSize: 16,
-    }      
+    },    
 });
