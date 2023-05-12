@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, ActivityIndicator } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { styles } from './styles/styles';
 import Logo from './components/Logo';
 import MyTabs from './navigation/navigation';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
 
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -46,4 +49,6 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
+
+export default App;

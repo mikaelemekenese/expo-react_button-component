@@ -10,7 +10,7 @@ type ButtonProps = {
     title: string;
 };
 
-export default function Button({ cp, cs, onPress, outlined, title }: ButtonProps) {
+const Button = ({ cp, cs, onPress, outlined, title }: ButtonProps) => {
 
     const buttonStyle = outlined ? {...styles.plainButton, ...styles.outlinedButton} : styles.plainButton;
 
@@ -20,3 +20,5 @@ export default function Button({ cp, cs, onPress, outlined, title }: ButtonProps
         </TouchableOpacity>
     )
 }
+
+export default Button;

@@ -3,12 +3,12 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from '../styles/styles';
 import Header from '../components/Header';
 
-export default function AboutScreen({ navigation }) {
+const AboutScreen = () => {
 
     return (
         <View style={styles.containerBis}>
 
-            <Header navigation={navigation} />
+            <Header />
 
             <Text style={styles.containerTitle}>A propos</Text>
     
@@ -20,3 +20,4 @@ export default function AboutScreen({ navigation }) {
     );
 }      
 
+export default AboutScreen;

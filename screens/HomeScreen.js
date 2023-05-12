@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from '../styles/styles';
 import Header from '../components/Header';
 
-export default function HomeScreen({ navigation }) {
+const HomeScreen = ({navigation}) => {
 
     return (
         <View style={styles.containerBis}>
@@ -19,3 +19,5 @@ export default function HomeScreen({ navigation }) {
         </View>
     );
 }
+
+export default HomeScreen;
