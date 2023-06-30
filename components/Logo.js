@@ -1,18 +1,23 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { styles } from '../styles/styles';
 
 type LogoProps = {
     width: number;
     height: number;
-    navigation: any;
-    onPress: () => void;
 };
 
-const Logo = ({ width, height, onPress, navigation }: LogoProps) => {
+const Logo = ({ width, height }: LogoProps) => {
+
+    const navigation = useNavigation();
+
+    const onPress = () => {
+        navigation.navigate('Accueil');
+    };
     
     return (
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity onPress={onPress}>
             <Image style={[styles.logo, {width: width, height: height}]} source={require('../assets/images/neafood-logo.png')} />
         </TouchableOpacity>
     )
